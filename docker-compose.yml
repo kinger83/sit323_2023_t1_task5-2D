@@ -1,0 +1,18 @@
+version: '3'
+services:
+  home:
+    build: ./frontend
+    container_name: home
+    ports:
+      - "8080:8080"
+    networks:
+      - myNetwork
+  calc:
+    build: ./backend
+    container_name: calc
+    ports:
+      - "80:80"
+    networks:
+      - myNetwork
+networks:
+  myNetwork:
